@@ -1,0 +1,2 @@
+# SGES.edu
+gyanodaya website
