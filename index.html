@@ -78,7 +78,7 @@
             text-align: left;
             margin-top: 0px;
             background:
-                        url('C:\Users\sathi\OneDrive\Pictures\img1.jpg') center/cover fixed;  
+                        url('C:/Users/sathi/OneDrive/Pictures/pngtree-diverse-group-of-students-reading-books-in-a-library-stock-photo-image_16205449.jpg') center/cover fixed;  
             padding: 0 8%;
             position: relative;
         
@@ -510,36 +510,98 @@
     display: none;
   }
 }
+/* GUIDELINE SECTION STYLING */
+.guidelines-section {
+  padding: 60px 10%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
 
-/* Mobile View */
+.guidelines-slider-container {
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+}
+
+.guidelines-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.guideline-card {
+  flex: 0 0 95%;
+  scroll-snap-align: start;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.guideline-card h2 {
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.guideline-card ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.guideline-card ul li {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  transition: all 0.3s ease-in-out;
+}
+
+.guideline-card ul li:hover {
+  color: #004080;
+  transform: translateX(5px);
+}
+
+/* Dot navigation */
+.nav-dots {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-dots .dot.active {
+  background-color: #004080;
+}
+
+/* Responsive Enhancements */
 @media (max-width: 768px) {
-    .guidelines-slider-container {
-        padding: 0 !important;
-        overflow: visible;
-    }
-    
-    .guidelines-slider {
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        gap: 0;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .guideline-card {
-        min-width: 100% !important;
-        scroll-snap-align: start;
-        border-radius: 0;
-        box-shadow: none;
-    }
-    
-    .guide-arrow {
-        display: none !important;
-    }
-    
-    /* Hide scrollbar */
-    .guidelines-slider::-webkit-scrollbar {
-        display: none;
-    }
+  .guideline-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .guideline-card ul li {
+    font-size: 1rem;
+  }
+  .guideline-card{
+    flex: 0 0 80%;
+  
+  }
 }
 
     
@@ -1313,42 +1375,44 @@
           <h3>Extra-Curricular Activities</h3>
           <p>We believe in all-round development through arts, sports, and more.</p>
         </div>
-  
+       
       </div>
-  
+      
       <button class="arrow right" onclick="scrollFeatureRight()"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="nav-dots" id="nav-Dots-features"></div>
     </div>
-    </section>
+   
+    </section> 
     <!-- Features Section End -->
     
-<!-- Guidelines Section मा यसरी परिवर्तन गर्नुहोस् -->
-<section class="guidelines-section">
-  <div class="guidelines-slider-container">
-      <button class="guide-arrow left" onclick="scrollGuide(-1)">❮</button>
-      
-      <div class="guidelines-slider">
-          <div class="guideline-card active">
-              <h2>Parental Guidelines</h2>
-              <ul>
-                  <li>Homework check: See if the kids have completed their homework.</li>
-                  <li>Educational materials: Ensure proper school supplies.</li>
-                  <li>Uniform maintenance: Keep uniforms clean and tidy.</li>
-              </ul>
-          </div>
-
+    <section class="guidelines-section">
+      <h2 class="section-title">Guidelines</h2>
+      <div class="guidelines-slider-container">
+        <div class="guidelines-slider" id="guidelinesSlider">
           <div class="guideline-card">
-              <h2>Student Guidelines</h2>
-              <ul>
-                  <li>Regular attendance and punctuality</li>
-                  <li>Respect for teachers and classmates</li>
-                  <li>Participation in extracurricular activities</li>
-              </ul>
+            <h2>Parental Guidelines</h2>
+            <ul>
+              <li>Homework check: See if the kids have completed their homework.</li>
+              <li>Educational materials: Ensure proper school supplies.</li>
+              <li>Uniform maintenance: Keep uniforms clean and tidy.</li>
+            </ul>
           </div>
+    
+          <div class="guideline-card">
+            <h2>Student Guidelines</h2>
+            <ul>
+              <li>Regular attendance and punctuality</li>
+              <li>Respect for teachers and classmates</li>
+              <li>Participation in extracurricular activities</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Dot Navigation -->
+        <div class="nav-dots" id="nav-Dots-guideline"></div>
       </div>
-
-      <button class="guide-arrow right" onclick="scrollGuide(1)">❯</button>
-  </div>
-</section>
+    </section>
+    
     
   
     <!-- <section class="vision">
@@ -1389,9 +1453,10 @@
               </video>
             </div>
           </div>
-      
           <button class="arrow right" onclick="scrollVideoRight()"><i class="fas fa-chevron-right"></i></button>
         </div>
+        <div class="nav-dots" id="nav-Dots-video"></div>
+      </div>
       </section>
       
     
@@ -1419,7 +1484,9 @@
                 <p>"Each child is unique and deserves quality education to grow and thrive."</p>
             </div>
             </div>
-            <button class="arrow right" onclick="scrollRight()"><i class="fas fa-chevron-right"></i></button>
+            <button class="arrow right" onclick="scrollRight()"><i class="fas fa-chevron-right"></i></button>   
+          </div>
+            <div class="nav-dots" id="nav-Dots-teacher"></div>
         </div>
     </section>
 <!-- Programme Section Start -->
@@ -1457,11 +1524,12 @@
             <p>From dance to painting, students develop their talents beyond academics.</p>
           </div>
         </div>
-  
-      </div>
+        </div>
   
       <button class="arrow right" onclick="scrollProgrammeRight()"><i class="fas fa-chevron-right"></i></button>
     </div>
+    <div class="nav-dots" id="nav-Dots-programme"></div>
+  </div>
   </section>
   <div id="overlay" onclick="closeForm()"></div>
 <div class="join-form-popup" id="joinForm">
@@ -1615,37 +1683,43 @@
     </script>
 
 <script>
-// स्वाइप डिटेक्शन कोड
-let touchStartX = 0;
-let touchEndX = 0;
+const guideSlider = document.getElementById('guidelinesSlider');
+const dotsContainer = document.getElementById('nav-dots');
+const cards = guideSlider.querySelectorAll('.guideline-card');
 
-const slider = document.querySelector('.guidelines-slider');
+// Create dots
+cards.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => {
+    guideSlider.scrollTo({
+      left: i * guideSlider.clientWidth,
+      behavior: 'smooth'
+    });
+  });
+  dotsContainer.appendChild(dot);
+});
 
-slider.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-}, false);
+// Update dots on scroll
+guideSlider.addEventListener('scroll', () => {
+  const index = Math.round(guideSlider.scrollLeft / guideSlider.clientWidth);
+  document.querySelectorAll('.dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+});
 
-slider.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-}, false); 
+// Auto scroll
+let autoScroll = setInterval(() => {
+  const nextIndex = (Math.round(guideSlider.scrollLeft / guideSlider.clientWidth) + 1) % cards.length;
+  guideSlider.scrollTo({
+    left: nextIndex * guideSlider.clientWidth,
+    behavior: 'smooth'
+  });
+}, 4000);
 
-function handleSwipe() {
-    const swipeThreshold = 50;
-    
-    if(touchStartX - touchEndX > swipeThreshold) {
-        // Left swipe (next slide)
-        scrollGuide(1);
-    } else if (touchEndX - touchStartX > swipeThreshold) {
-        // Right swipe (previous slide)
-        scrollGuide(-1);
-    }
-}
-
-// ऑटो-स्क्रोल रोक्ने
-if(window.innerWidth <= 768) {
-    clearInterval(autoScroll);
-}
+// Stop on touch
+guideSlider.addEventListener('touchstart', () => clearInterval(autoScroll));
 </script>
 
     
@@ -1739,6 +1813,58 @@ if(window.innerWidth <= 768) {
         }
       </script>
       
-      
+      <script>
+        function setupDotNavigation(sliderId, dotContainerId, cardSelector) {
+          const slider = document.getElementById(sliderId);
+          const dotsContainer = document.getElementById(dotContainerId);
+          const cards = slider.querySelectorAll(cardSelector);
+        
+          // Clear any existing dots
+          dotsContainer.innerHTML = "";
+        
+          // Create navigation dots
+          cards.forEach((_, i) => {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (i === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => {
+              slider.scrollTo({
+                left: i * slider.clientWidth,
+                behavior: "smooth"
+              });
+            });
+            dotsContainer.appendChild(dot);
+          });
+        
+          // Update active dot on scroll
+          slider.addEventListener("scroll", () => {
+            const index = Math.round(slider.scrollLeft / slider.clientWidth);
+            dotsContainer.querySelectorAll(".dot").forEach((dot, i) => {
+              dot.classList.toggle("active", i === index);
+            });
+          });
+        
+          // Auto scroll
+          let autoScroll = setInterval(() => {
+            const nextIndex = (Math.round(slider.scrollLeft / slider.clientWidth) + 1) % cards.length;
+            slider.scrollTo({
+              left: nextIndex * slider.clientWidth,
+              behavior: "smooth"
+            });
+          }, 4000);
+        
+          // Stop auto scroll on touch (mobile)
+          slider.addEventListener("touchstart", () => clearInterval(autoScroll));
+        }
+        
+        // Initialize all sliders with dot navigation
+        window.addEventListener("DOMContentLoaded", () => {
+          setupDotNavigation("guidelinesSlider", "nav-Dots-guideline", ".guideline-card");
+          setupDotNavigation("featuresSlider", "nav-Dots-features", ".feature-card");
+          setupDotNavigation("videoSlider", "nav-Dots-video", ".video-card");
+          setupDotNavigation("teacherSlider", "nav-Dots-teacher", ".message-card");
+          setupDotNavigation("programmeSlider", "nav-Dots-programme", ".programme-card-slide");
+        });
+        </script>
 </body>
 </html>
