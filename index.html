@@ -46,7 +46,8 @@
             background-color: #004080;
             margin: 0;
             padding: 10px 0;
-            gap: 20px;
+            gap: 6rem;
+            justify-content: space-between;
         
         }
 
@@ -67,10 +68,11 @@
             border-radius: 5px;
         }
 
+        
 
        
         .hero {
-            height: 100vh;
+            height: 85vh;
              display: flex; 
             justify-content: flex-start;
             align-items: center;
@@ -78,12 +80,188 @@
             text-align: left;
             margin-top: 0px;
             background:
-                        url('C:/Users/sathi/OneDrive/Pictures/pngtree-diverse-group-of-students-reading-books-in-a-library-stock-photo-image_16205449.jpg') center/cover fixed;  
-            padding: 0 8%;
+                        url('images/image2.jpg') center/cover fixed;  
+           padding: 0 8%;
             position: relative;
         
         } 
-  .menu-toggle {
+        
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* Overlay for readability */
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-family: 'Teko', sans-serif;
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.hero-social {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.hero-social a {
+  font-size: 1.2rem;
+  background: #FE70DC;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+        @media (max-width: 768px) {
+  .hero {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding-top:25%;
+  }
+}
+/* @media (max-width: 480px) {
+  .hero {
+    background-image: url('C:/Users/sathi/OneDrive/Pictures/pngtree-diverse-group-of-students-reading-books-in-a-library-stock-photo-image_16205449.jpg');
+  }
+} */
+  /* @media (max-width: 768px) {
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+}
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .hero-social {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}  */
+/* Mobile-first adjustments */
+ @media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    background-position: center top;
+ 
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero::before {
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for better readability */
+  }
+
+  .hero-content {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0% 0
+   
+  }
+
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem !important;
+    margin-bottom: 20px;
+    text-align: center;
+    text-align: left;
+  }
+
+  .hero-social {
+    margin-top: auto;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .hero-social a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .mobile-notice {
+    margin: 20px auto 0;
+    width: 90%;
+  }
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem !important;
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 15px;
+  }
+
+  .hero-social {
+    padding-bottom: 15px;
+  }
+
+  .hero-social a {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+} 
+
+ .menu-toggle {
   display: none;
   font-size: 28px;
   color: white;
@@ -154,7 +332,7 @@
     transform: translateY(-50%) rotate(90deg);
   }
 }
-        .hero-title {
+        /* .hero-title {
             position: relative;
   font-size: 4rem;
   font-weight: bold;
@@ -191,8 +369,9 @@
 
 .hero-social i:hover {
     transform: scale(1.2);
-    color: #1877F2;
-}
+    color: #1877F2; 
+}*/
+
 .mobile-notice {
     display: none; /* डेफल्ट लुकाउने */
     background: linear-gradient(135deg, #FE70DC, #004080);
@@ -263,53 +442,77 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin: 0;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 10px 0;
+  margin-bottom: 50px;
 }
 
 .info-box {
-  flex: 1 1 250px;
-  max-width: 200px;
-  background-color: #007bff;
+  flex: 1 1 200px;
+  max-width: 180px;
+  background-color: #004080;
   color: white;
   text-align: center;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
 }
 
 .info-box .icon {
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: #ffcc00;
+}
+
+.info-box h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.info-box p {
+  font-size: 0.9rem;
+  color: #eee;
 }
 
 .info-box:hover {
   transform: translateY(-5px);
+  background-color: #003366;
 }
 
 .orange {
   background-color: #f7941d;
 }
 
+.orange:hover {
+  background-color: #d67c0b;
+}
+
 .dark {
   background-color: #2e3b4e;
 }
 
-@media (max-width: 768px) {
+.dark:hover {
+  background-color: #1e2838;
+}
+
+ @media (max-width: 768px) {
   .info-section {
     flex-direction: column;
     align-items: center;
-  }
-}
-@media (max-width: 768px) {
-    /* Hide original buttons */
-    .hero .info-section {
-        display: none;
-    }
     
+  }
+
+  .info-box {
+    width: 80%;
+    max-width: none;
+  } 
+}
+
     /* Mobile menu buttons styling */
-    .mobile-buttons-container {
+   nav .mobile-buttons-container {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -346,11 +549,10 @@
         transform: translateY(-2px);
         opacity: 0.9;
     }
-}
 
 /* Desktop View */
 @media (min-width: 769px) {
-    .mobile-buttons-container {
+    nav .mobile-buttons-container {
         display: none !important;
     }
 }
@@ -418,8 +620,8 @@
             }
          }
 
-  .features-section {
-  padding: 60px 10%;
+.features-section {
+  padding: 10% 10%;
   background-color: #f2f2f2;
   text-align: center;
 }
@@ -436,7 +638,6 @@
   align-items: center;
   overflow: hidden;
   position: relative;
-
 }
 
 .features-slider {
@@ -509,10 +710,23 @@
   .arrow {
     display: none;
   }
+  .features-section {
+  padding: 50% 10%;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: #004080;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
 }
 /* GUIDELINE SECTION STYLING */
 .guidelines-section {
-  padding: 60px 10%;
+  padding: 10px 10%;
   background-color: #f9f9f9;
   text-align: center;
 }
@@ -591,6 +805,9 @@
 
 /* Responsive Enhancements */
 @media (max-width: 768px) {
+  .guidelines-section{
+    padding: 10% 10%;
+  }
   .guideline-card h2 {
     font-size: 1.6rem;
   }
@@ -742,40 +959,65 @@
 }
 
 .message-card {
-    width: 100%;
-    flex: 0 0 100%;
-    background: white;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    scroll-snap-align: start;
-    text-align: center;
-     transition: transform 0.3s ease-in-out;
+  flex: 0 0 95%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease-in-out;
+  text-align: left;
 }
 
 .message-card:hover {
-    transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .message-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 20%;
-    margin-bottom: 15px;
-    object-fit: cover;
+  width: 50%;
+
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
-.message-card h4 {
-    font-size: 1.3rem;
-    color: #004080;
-    margin-bottom: 10px;
+.message-content {
+  width: 50%;
 }
 
-.message-card p {
-    font-size: 1rem;
-    font-style: italic;
-    color: #555;
+.message-content h4 {
+  font-size: 1.3rem;
+  color: #004080;
+  margin-bottom: 10px;
 }
+
+.message-content p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .message-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+  }
+
+  .message-card img,
+  .message-content {
+    width: 50%;
+    height: 100%;
+  }
+}
+
 .arrow {
     background-color: #004080;
     color: white;
@@ -1266,6 +1508,22 @@
   }
 }
 
+section {
+  border-bottom: 2px solid #ddd; /* Thin line between sections */
+}
+
+/* Last section मा border-bottom नआउनको लागि */
+section:last-of-type {
+  border-bottom: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  section {
+    border-bottom: 2px solid #ddd; /* Thin line between sections */
+  }
+}
+
 
     </style>
 </head>
@@ -1281,15 +1539,15 @@
   
     <header>
         <div class="logo">
-            <img src="D:\\att.IsENyCbACvruWiSMUlbjtzI-m6HokQ0iAzmt6hEDbZA__4_-removebg-preview.png" alt="Shree Gyanodaya Logo">
+            <img src="images/logo.png" alt="Shree Gyanodaya Logo">
         </div>
         <nav class="navbar">
           <div class="menu-toggle" onclick="toggleMenu()">☰</div>
           <ul id="navLinks">
-                <li><a href="homepage.html">Home</a></li> 
+                <li><a href="index.html">Home</a></li> 
                 <li><a href="#programme"></section>programme</a></li>
                 <li><a href="news and events.html">News and Events</a></li>
-                <li><a href="#features">About Us</a></li>
+                <li><a href="#contact-us"></section>About Us</a></li>
                  <!-- Mobile-only buttons -->
             <li class="mobile-buttons-container">
               <a href="its admission.html" class="mobile-btn admission">Admission</a>
@@ -1305,8 +1563,7 @@
             <p class="hero-subtitle">Empowering minds, igniting futures</p>
         
             <div class="hero-social">
-                 <p2>Visit us on</p2>
-          
+                 <p2>Visit us on</p2>  
             <a href="https://www.facebook.com/profile.php?id=100063790039958"><i class="fa-brands fa-facebook"></i></a>
             <a href="#" class="hero-btn join" onclick="openForm()">Join Us</a>
             </div>
@@ -1470,18 +1727,24 @@
         <div class="message-slider" id="teacherSlider">
             <div class="message-card">
                 <img src="D:\Download\410107455_6890741167700109_3526873232368011901_n.jpg" alt="Teacher 1">
+               <div class="messege-content"> 
                 <h4>Ocean katwal</h4>
                 <p>"Teaching at Gyanodaya has been a fulfilling journey with curious minds and supportive management."</p>
             </div>
+          </div>
             <div class="message-card">
                 <img src="images/teacher2.jpg" alt="Teacher 2">
+                <div class="messege-content"> 
                 <h4>Ramesh Karki</h4>
                 <p>"We aim to nurture young minds with a blend of knowledge and discipline."</p>
             </div>
+            </div>
             <div class="message-card">
                 <img src="images/teacher3.jpg" alt="Teacher 3">
+                <div class="messege-content"> 
                 <h4>Sita Gurung</h4>
                 <p>"Each child is unique and deserves quality education to grow and thrive."</p>
+            </div>
             </div>
             </div>
             <button class="arrow right" onclick="scrollRight()"><i class="fas fa-chevron-right"></i></button>   
@@ -1560,7 +1823,7 @@
   </form>
 </div>
 
-<section class="contact-us-section">
+<section class="contact-us-section" id="contact-us">
   <h2>Contact Us</h2>
   <div class="contact-us-container">
     
@@ -1614,13 +1877,12 @@
         <div class="footer-box">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="its gallery.html">Gallery</a></li>
-            <li><a href="its teachers.html">Teachers</a></li>
-            <li><a href="#programme">Programs</a></li>
-            <li><a href="its admission.html">Admissions</a></li>
-            <li><a href="news and events.html">News</a></li>
-            <li><a href="its about.html">About Us</a></li>
+            <li><a href="index.html">Home</a></li> 
+                <li><a href="#programme"></section>programme</a></li>
+                <li><a href="news and events.html">News and Events</a></li>
+                <li><a href="#contact-us-section">About Us</a></li>
+            
+            
           </ul>
         </div>
     
