@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News and Events | Shree Gyanodaya English School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .top-contact-bar {
+  background-color: #0562c0;
+  color: white;
+  padding: 8px 15px;
+  font-size: 0.95rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.top-contact-bar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.top-contact-line {
+  display: inline-flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.top-contact-line span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+@media (max-width: 768px) {
+    .top-contact-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-left, .contact-right {
+        margin: 4px 0;
+    }
+}
+    /* Header/Navbar */
+
+    header {
+            background-color: #004080;
+            color: #ffffff;
+            padding: 10px 0px;
+            margin-top: 30px;
+            position: relative;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+.logo {
+  height: 50px;
+  margin-left: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  background-color: #004080;
+  margin: 0;
+  padding: 10px 0;
+  gap: 6rem;
+}
+nav ul li {
+            margin: 0 10px;
+        }
+
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #FE70DC;
+  background-color: rgb(222, 222, 222);
+  border-radius: 5px;
+}
+
+/* Menu toggle (☰ button) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #004080;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 220px;
+    border-radius: 8px;
+    padding: 15px 0;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
+  nav ul li a {
+    padding: 12px 20px;
+    display: block;
+  }
+}
+
+/* Mobile Buttons inside menu */
+nav .mobile-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.admission {
+  background: linear-gradient(135deg, #FE70DC, #ff0066);
+  color: white !important;
+}
+
+.facilities {
+  background: #007bff;
+  color: white !important;
+}
+
+.news {
+  background: #2e3b4e;
+  color: white !important;
+}
+
+.mobile-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Hide mobile buttons on desktop */
+@media (min-width: 769px) {
+  nav .mobile-buttons-container {
+    display: none;
+  }
+}
+
+  
+
+
+    .calendar-section {
+      padding: 60px 10%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .calendar-section h1 {
+      font-size: 2.5rem;
+      color: #004080;
+      margin-bottom: 30px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .events-list-section {
+      padding: 60px 10%;
+      background-color: #f0f4f8;
+    }
+
+    .events-list-section h2 {
+      font-size: 2rem;
+      color: #004080;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .event-card {
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #004080;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .event-date {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #FE70DC;
+      min-width: 120px;
+    }
+
+    .event-detail {
+      text-align: left;
+    }
+
+    .event-detail h4 {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+      color: #004080;
+    }
+
+    .event-detail p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 400px;
+      }
+      .event-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="top-contact-bar">
+        <div class="top-contact-line">
+          <span><i class="fas fa-envelope"></i> info@gyanodaya.edu.np</span>
+          <span><i class="fas fa-phone"></i> +977-123456789</span>
+          <span><i class="fas fa-location-dot"></i> Bahuni, Morang, Nepal</span>
+        </div>
+      </div>
+      
+        <header>
+            <div class="logo">
+                <img src="D:\\att.IsENyCbACvruWiSMUlbjtzI-m6HokQ0iAzmt6hEDbZA__4_-removebg-preview.png" alt="Shree Gyanodaya Logo">
+            </div>
+            <nav class="navbar">
+              <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+              <ul id="navLinks">
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="#programme"></section>programme</a></li>
+                    <li><a href="news and events.html">News and Events</a></li>
+                    <li><a href="#contact-us"></section>About Us</a></li>
+                     <!-- Mobile-only buttons -->
+                <li class="mobile-buttons-container">
+                  <a href="its admission.html" class="mobile-btn admission">Admission</a>
+                  <a href="#facilities" class="mobile-btn facilities">Our Facilities</a>
+                  <a href="news and events.html" class="mobile-btn news">News & Events</a>
+              </li>
+                </ul>
+            </nav>
+        </header>
+
+<section class="calendar-section">
+  <h1>School Academic Calendar</h1>
+  <!-- GOOGLE Calendar Embed -->
+  <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarlink&ctz=Asia%2FKathmandu"></iframe>
+</section>
+
+<section class="events-list-section">
+  <h2>Upcoming Events</h2>
+
+  <!-- Event 1 -->
+  <div class="event-card">
+    <div class="event-date">May 1, 2025<br><small>Thursday</small></div>
+    <div class="event-detail">
+      <h4>Labor Day Holiday</h4>
+      <p>School will remain closed in observance of International Workers' Day.</p>
+    </div>
+  </div>
+
+  <!-- Event 2 -->
+  <div class="event-card">
+    <div class="event-date">May 15, 2025<br><small>Wednesday</small></div>
+    <div class="event-detail">
+      <h4>Annual Sports Day</h4>
+      <p>Students are requested to wear their sports uniforms. Prizes will be distributed.</p>
+    </div>
+  </div>
+
+  <!-- Event 3 -->
+  <div class="event-card">
+    <div class="event-date">June 5, 2025<br><small>Thursday</small></div>
+    <div class="event-detail">
+      <h4>Environment Day Celebration</h4>
+      <p>Tree plantation program and awareness rally will be organized by Eco Club.</p>
+    </div>
+  </div>
+
+</section>
+<script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+    </script>
+    
+</body>
+</html>
