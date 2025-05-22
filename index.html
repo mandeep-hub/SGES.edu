@@ -13,7 +13,6 @@
             font-family: 'Roboto', sans-serif;
             scroll-behavior: smooth;
         }
-
         header {
             background-color: #004080;
             color: #ffffff;
@@ -534,8 +533,8 @@
         background: linear-gradient(135deg, #FE70DC, #ff0066);
         color: white !important;
     }
-    
-    .facilities {
+
+    .results {
         background: #007bff;
         color: white !important;
     }
@@ -621,9 +620,10 @@
          }
 
 .features-section {
-  padding: 10% 10%;
+  padding: 10px 10%;
   background-color: #f2f2f2;
   text-align: center;
+
 }
 
 .section-title {
@@ -654,7 +654,7 @@
 }
 
 .feature-card {
-  flex: 0 0 auto;
+  flex: 0 0 100%;
   width: 100%;
   background: #ffffff;
   padding: 30px 10px;
@@ -711,7 +711,7 @@
     display: none;
   }
   .features-section {
-  padding: 50% 10%;
+  padding: 55% 5% 10% 5%;
   background-color: #f2f2f2;
   text-align: center;
 }
@@ -806,7 +806,7 @@
 /* Responsive Enhancements */
 @media (max-width: 768px) {
   .guidelines-section{
-    padding: 10% 10%;
+    padding: 10% 5%;
   }
   .guideline-card h2 {
     font-size: 1.6rem;
@@ -820,8 +820,6 @@
   
   }
 }
-
-    
 
         /* .vision {
             height: 300px;
@@ -928,94 +926,150 @@
 
 
 .message-section {
-    padding: 60px 10%;
-    background-color: #f9f9f9;
-    text-align: center;
+    padding: 10px 5%;
+    background: #f8f9fa;
+    position: relative;
+}
+.section-title {
+  font-size: 2.8rem;
+  color: #004080;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  align-items: center;
 }
 
-.message-section h2 {
-    font-size: 2.5rem;
-    color: #004080;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
+
+
 .message-slider-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
 }
+
 .message-slider {
     display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px;
+    gap: 30px;
+    padding: 20px 0;
     scroll-snap-type: x mandatory;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-}
-.message-slider::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
 }
 
 .message-card {
-  flex: 0 0 95%;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-  height: 300px;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  scroll-snap-align: start;
-  transition: transform 0.3s ease-in-out;
-  text-align: left;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    min-width: 0;
 }
 
-.message-card:hover {
-  transform: scale(1.02);
+.profile-image {
+    flex: 0 0 40%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 0 0 20px;
 }
 
-.message-card img {
-  width: 50%;
-
-  height: 100%;
-  border-radius: 15px;
-  object-fit: cover;
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .message-content {
-  width: 50%;
-}
-
-.message-content h4 {
-  font-size: 1.3rem;
-  color: #004080;
-  margin-bottom: 10px;
-}
-
-.message-content p {
-  font-size: 1rem;
-  font-style: italic;
-  color: #555;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .message-card {
+    flex: 1;
+    padding: 40px;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-  }
+    justify-content: center;
+}
 
-  .message-card img,
-  .message-content {
-    width: 50%;
-    height: 100%;
-  }
+.leader-info {
+    border-left: 4px solid #004080;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.position {
+    color: #FE70DC;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.message-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.see-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.see-more-btn {
+    background: #004080;
+    color: white;
+    padding: 8px 40px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    background: #FE70DC;
+    transform: translateY(-2px);
+}
+
+/* Touch Scroll Improvements */
+.message-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.message-slider::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.message-slider::-webkit-scrollbar-thumb {
+    background: #004080;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .message-card {
+        flex-direction: column;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .profile-image {
+        border-radius: 20px 20px 0 0;
+        height: 300px;
+    }
+    
+    .message-content {
+        padding: 30px;
+    }
+    
+    .message-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image {
+        height: 250px;
+    }
+    
+    .message-content {
+        padding: 20px;
+    }
 }
 
 .arrow {
@@ -1127,6 +1181,9 @@
 }
 
 @media (max-width: 768px) {
+  .programme-section{
+    padding: 10% 5%;
+  }
   .programme-card-slide {
     flex-direction: column;
     min-width: 90%;
@@ -1549,10 +1606,10 @@ section:last-of-type {
                 <li><a href="news and events.html">News and Events</a></li>
                 <li><a href="#contact-us"></section>About Us</a></li>
                  <!-- Mobile-only buttons -->
-            <li class="mobile-buttons-container">
-              <a href="#" class="mobile-btn admission" onclick="openForm()">Admission</a>
-              <a href="#facilities" class="mobile-btn facilities">Our Facilities</a>
-              <a href="news and events.html" class="mobile-btn news">News & Events</a>
+               <li class="mobile-buttons-container">
+               <a href="#" class="mobile-btn admission" onclick="openForm()">Admission</a>
+               <a href="view results.html" class="mobile-btn results">check results</a>
+               <a href="recentnotice.html" class="mobile-btn news">Notices</a>
           </li>
             </ul>
         </nav>
@@ -1571,24 +1628,28 @@ section:last-of-type {
               <div class="notice-icon">📢</div>
               <h3>Admissions Open!</h3>
               <p>Explore our facilities and latest events</p>
-              <a href="news and events.html" class="notice-button">View Details</a>
+              <a href="recentnotice.html" class="notice-button">View Details</a>
           </div>
             <section class="info-section">
+            
               <div class="info-box">
-                <div class="icon"><i class="fas fa-university"></i></div>
-                <h3>Our Facilities</h3>
+                <div class="icon"><i class="fa-solid fa-square-poll-vertical"></i></i></div>
+                <h3>check results</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adis.</p>
+                <p><a href="view results.html" class="notice-button">View Results</a></p>
               </div>
               <div class="info-box orange">
                 <div class="icon"><i class="fas fa-clipboard-check"></i></div>
                 <h3>Admissions</h3>
                 <p>Quis ipsum suspendisse ultrices gravida.</p>
               </div>
-              <div class="info-box dark">
-                <div class="icon"><i class="fas fa-calendar-alt"></i></div>
-                <h3>News & Events</h3>
-                <p>Lorem ipsum dolor amet consectetur ac.</p>
-              </div>
+             <div class="info-box dark">
+  <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+  <h3>Recent Notice</h3>
+  <p>New updates, alerts, and academic notices.</p>
+  <p><a href="recentnotice.html" class="notice-button">View Notice</a></p>
+</div>
+
             </section>
             
           </div>
@@ -1694,7 +1755,7 @@ section:last-of-type {
           <div class="video-slider" id="videoSlider">
             <div class="video-card">
               <video controls>
-                <source src="videos/life1.mp4" type="video/mp4">
+                <source src="videos/video1.mp4" type="video/mp4">
               </video>
             </div>
       
@@ -1717,41 +1778,54 @@ section:last-of-type {
       </section>
       
     
-  
-    <section class="message-section">
-        <h2>Message from Teachers</h2>
-        <div class="message-slider-wrapper">
-            <button class="arrow left" onclick="scrollLeft()"><i class="fas fa-chevron-left"></i></button>
-    
-    
+  <section class="message-section">
+    <h2 class="section-title">Leadership Message</h2>
+    <div class="message-slider-wrapper">
+      
+        
         <div class="message-slider" id="teacherSlider">
+            <!-- Principal Card -->
             <div class="message-card">
-                <img src="images/teacher1.jpg" alt="Teacher 1">
-               <div class="messege-content"> 
-                <h4>Ocean katwal</h4>
-                <p>"Teaching at Gyanodaya has been a fulfilling journey with curious minds and supportive management."</p>
+                <div class="profile-image">
+                    <img src="images/teachers5.jpg" alt="Principal">
+                </div>
+                <div class="message-content">
+                    <div class="leader-info">
+                        <h3>Prem Tamang</h3>
+                        <div class="position">Principal</div>
+                    </div>
+                    <p class="message-text">
+                        "At Gyanodaya, we combine academic excellence with character building to prepare students for global challenges."
+                    </p>
+                </div>
             </div>
-          </div>
+
+            <!-- Vice Principal Card -->
             <div class="message-card">
-                <img src="images/teacher2.jpg" alt="Teacher 2">
-                <div class="messege-content"> 
-                <h4>Sunil dahal</h4>
-                <p>"We aim to nurture young minds with a blend of knowledge and discipline."</p>
+                <div class="profile-image">
+                    <img src="images/teacher6.jpg" alt="Vice Principal">
+                </div>
+                <div class="message-content">
+                    <div class="leader-info">
+                        <h3>Sunil Dahal</h3>
+                        <div class="position">Vice Principal</div>
+                    </div>
+                    <p class="message-text">
+                        "Our innovative teaching methods focus on developing critical thinking and creativity in students."
+                    </p>
+                </div>
             </div>
-            </div>
-            <div class="message-card">
-                <img src="images/teacher3.jpg" alt="Teacher 3">
-                <div class="messege-content"> 
-                <h4>Sanjay chaudhary</h4>
-                <p>"Each child is unique and deserves quality education to grow and thrive."</p>
-            </div>
-            </div>
-            </div>
-            <button class="arrow right" onclick="scrollRight()"><i class="fas fa-chevron-right"></i></button>   
-          </div>
-            <div class="nav-dots" id="nav-Dots-teacher"></div>
         </div>
-    </section>
+        
+      
+    </div>
+
+    <div class="see-more-container">
+        <button class="see-more-btn" onclick="showMoreLeadership()">See More</button>
+    </div>
+</section>
+
+
 <!-- Programme Section Start -->
 <section class="programme-section" id="programme">
     <h2>Our Programs</h2>
@@ -1766,7 +1840,7 @@ section:last-of-type {
           <video src="videos/academic.mp4" controls></video>
           <div class="programme-text">
             <h3>Academic Excellence</h3>
-            <p>We promote quality education through smart classrooms and experienced faculty.</p>
+            <p>We promote quality education through smart classrooms and experienced faculty. </p>
           </div>
         </div>
   
@@ -1997,6 +2071,12 @@ guideSlider.addEventListener('touchstart', () => clearInterval(autoScroll));
         function scrollVideoRight() {
           videoSlider.scrollBy({ left: videoSlider.clientWidth, behavior: 'smooth' });
         }
+        slider.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+
       </script>
       
 
@@ -2020,30 +2100,82 @@ guideSlider.addEventListener('touchstart', () => clearInterval(autoScroll));
         }
       </script>
       
+<script>
+// Enhanced JavaScript with Touch Scroll
+let isDown = false;
+let startX;
+let scrollLeft;
+const slider = document.querySelector('.message-slider');
+
+// Mouse controls
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+});
+
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+});
+
+slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    slider.scrollLeft = scrollLeft - walk;
+});
+
+// Touch controls
+slider.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('touchend', () => {
+    isDown = false;
+});
+
+slider.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    slider.scrollLeft = scrollLeft - walk;
+});
+
+// Arrow controls
+function scrollLeft() {
+    slider.scrollBy({
+        left: -slider.offsetWidth,
+        behavior: 'smooth'
+    });
+}
+
+function scrollRight() {
+    slider.scrollBy({
+        left: slider.offsetWidth,
+        behavior: 'smooth'
+    });
+}
+
+// See More functionality
+function showMoreLeadership() {
+    // Add your logic to show more content
+    window.location.href = 'about.html#leadership';
+}
+</script>
 
 
-
-    <script>
-        const slider = document.getElementById('teacherSlider');
-    
-        // Auto scroll
-        setInterval(() => {
-            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-                slider.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                slider.scrollBy({ left: 240, behavior: 'smooth' });
-            }
-        }, 3000);
-    
-        // Manual scroll buttons
-        function scrollLeft() {
-            slider.scrollBy({ left: -240, behavior: 'smooth' });
-        }
-    
-        function scrollRight() {
-            slider.scrollBy({ left: 240, behavior: 'smooth' });
-        }
-    </script>
+   
     <script>
         const programmeSlider = document.getElementById('programmeSlider');
       
@@ -2129,5 +2261,58 @@ guideSlider.addEventListener('touchstart', () => clearInterval(autoScroll));
           setupDotNavigation("programmeSlider", "nav-Dots-programme", ".programme-card-slide");
         });
         </script>
+        <!-- Notice Popup -->
+<div id="noticePopup" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FE70DC;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 9999;
+    animation: slideIn 0.5s ease-out;">
+  <strong>📢 New Notice:</strong> <span id="latestNoticeText">New Exam Schedule Published!</span>
+  <br>
+  <a href="notice.html" style="color: #fff; text-decoration: underline;">Read More</a>
+</div>
+
+<style>
+@keyframes slideIn {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+</style>
+<script>
+  // Dummy data: change it with actual data via backend or JSON
+  const latestNotice = "Grade 10 Final Exam Schedule has been released!";
+
+  window.addEventListener("load", () => {
+    const popup = document.getElementById("noticePopup");
+    const textSpan = document.getElementById("latestNoticeText");
+    textSpan.textContent = latestNotice;
+
+    // Show popup only once per session
+    if (!sessionStorage.getItem("noticeShown")) {
+      popup.style.display = "block";
+      sessionStorage.setItem("noticeShown", "true");
+
+      // Auto hide after 7 seconds
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 7000);
+    }
+  });
+</script>
+
+
 </body>
 </html>
